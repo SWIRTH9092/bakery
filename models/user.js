@@ -7,7 +7,7 @@ const mongoose = require("./connection")
 // Define Model
 //-------------------------------------------
 // pull schema and model from mongoose
-const { Schema, model} = mongoose;
+const { Schema, model } = mongoose;
 
 // make user schema
 const userSchema = new Schema({
@@ -15,7 +15,7 @@ const userSchema = new Schema({
     password: {type: String, required: true},
     firstName: {type: String, required: true},
     lastName: {type: String, required: true},
-    email: {type:String, required: true}
+    email: {type: String, required: true}
 });
 
 // make User mdoel
