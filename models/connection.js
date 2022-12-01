@@ -3,7 +3,6 @@
 //-------------------------------------------
 require("dotenv").config()  // load ENV variables
 const mongoose = require("mongoose"); 
-const { use } = require("../controllers/user");
 
 //-------------------------------------------
 // database connecton
