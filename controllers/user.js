@@ -1,11 +1,37 @@
+//-------------------------------------------
+// Import Our Dependencies
+//-------------------------------------------
 const express = require("express")  // bring in express to make our app work
-const { pathToFileURL } = require("url")
-//const User = require("../models/user");
+const User = require("../models/user");
+const bcrypt = require("bcryptjs");
 
-const router = express.Router()
+//-------------------------------------------
+// Create Route
+//-------------------------------------------
+const router = express.Router();
 
-router.get("/", (req, res)=> {
-    res.send ("at router in user.controller")
-})
+//-------------------------------------------
+// Routes
+//-------------------------------------------
+//  The Signup Routes (Get => form, post => submit form)
+router.get("/signup", (req, res) => {
+    res.render("user/signup.ejs")
+});
 
-module.exports = router
+router.post("/signup", (req, res) => {
+    res.send("signup")
+});
+
+// The login Routes (Get => form, post => submit form)
+router.get("/login", (req, res) => {
+    res.render("user/login.ejs")
+});
+
+router.post("/login", (req, res) => {
+    res.send("login")
+});
+
+//-------------------------------------------
+// Export the Router
+//-------------------------------------------
+module.exports = router;
