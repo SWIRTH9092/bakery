@@ -8,6 +8,10 @@ const app = express();
 
 
 app.use(express.static("public"))  // serve files from the public folder
+app.use(morgan("tiny"))  //logging
+app.use(methodOverride("_method"))  //override for put and delete requests from form
+app.use(express.urlencoded ({extended: true})) //pase urlencoded request
+
 
 app.get('/', (req, res) => {
     res.send(`I am listening on port: ${PORT}`)
