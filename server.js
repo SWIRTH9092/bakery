@@ -38,6 +38,9 @@ app.get('/dburl', (req, res) => {
     res.send(`My connection string is: ${process.env.DATABASE_URL}`)
 })
 
+//-------------------------------------------
+// Listening Port
+//-------------------------------------------
 app.listen(PORT, () => {
     console.log(`🧏‍♀️ on port: ${PORT}`)
 }) 
