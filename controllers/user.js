@@ -33,7 +33,24 @@ router.get("/login", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
-    res.send("login")
+    //get the data from the request body
+    const { username, password } = req.body;
+    User.findOne ({ username }, (err, user) => {
+        //checking if user exists
+        if (!user) {
+            res.send("user doesn't exist");
+        } else {
+            //check to see if password matches
+            const result = bcrypt.compareSync(password, user.password);
+                if (result) {
+                    req.session.username = username;
+                    req.session.loggedIn = true;
+                    res.send ("logon successful");
+                } else {
+                    res.send("wrong password");
+                }
+            }
+    })
 });
 
 //-------------------------------------------
