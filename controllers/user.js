@@ -15,10 +15,12 @@ const router = express.Router();
 //-------------------------------------------
 //  The Signup Routes (Get => form, post => submit form)
 router.get("/signup", (req, res) => {
+    console.log("you are in sign up")
     res.render("user/signup.ejs")
 });
 
 router.post("/signup", (req, res) => {
+    console.log("req.body:", req.body)
     res.send("signup")
 });
 

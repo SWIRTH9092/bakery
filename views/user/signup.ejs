@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head-user.ejs", {title: "Sign up"}) %> 
+
+    <body>
+        <%- include("../partials/header-user.ejs", {title: "Sign up"}) %> 
+        
+        <main>
+            <form action="/user/signup" method="post">
+                <div>
+                    <fieldset>
+                        <legend>New User</legend>
+                        <label>
+                            USERNAME: <input type="text" name="username" required /><br>
+                        </label>
+                        <label>
+                            PASSWORD: <input type="password" name="password"
+                            required /><br>
+                        </label>
+                        <label>
+                            FIRST NAME: <input type="text" name="firstName" required /><br>
+                        </label>
+                        <label>
+                            LAST NAME: <input type="text" name="lastName"
+                            required /><br>
+                        </label>
+                        <label>
+                            EMAIL: <input type="email" name="email" required /><br>
+                        </label>
+                        <input type="submit" value="Create Account" />
+                    </fieldset>
+                </div>
+            </form>
+        </main>
+    </body>
+</html>
