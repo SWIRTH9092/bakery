@@ -8,6 +8,7 @@ const methodOverride = require("method-override") // override for put and delete
 const UserRouter = require("../controllers/user");
 const session = require('express-session'); // for ENV secret
 const MongoStore = require("connect-mongo");
+const HomeRouter = require("../controllers/home")
 
 //-------------------------------------------
 // Middleware
@@ -24,6 +25,7 @@ const middleware = (app) => {
         resave: false,
     }));
     app.use("/user", UserRouter);  // to the user router
+    app.use("/", HomeRouter);
 };
 
 //-------------------------------------------

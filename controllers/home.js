@@ -2,23 +2,18 @@
 // Import our dependencies
 //-------------------------------------------
 const express = require('express');  // bring express into our app
-const middleware = require("./utils/middleware");  
 
 
 //-------------------------------------------
-// create our express application Route
+// create route
 //-------------------------------------------
-const app = express();
+const router = express.Router();
+
+router.get('/', (req, res) => {
+    res.send(`In home router`)
+})
 
 //-------------------------------------------
-// Middleware
+// Export the router
 //-------------------------------------------
-middleware(app);
-
-//-------------------------------------------
-// Listening Port
-//-------------------------------------------
-const PORT = process.env.PORT || 3002;
-app.listen(PORT, () => {
-    console.log(`🧏‍♀️ on port: ${PORT}`)
-}) 
+module.exports = router
