@@ -15,13 +15,16 @@ const router = express.Router();
 //-------------------------------------------
 //  The Signup Routes (Get => form, post => submit form)
 router.get("/signup", (req, res) => {
-    console.log("you are in sign up")
     res.render("user/signup.ejs")
 });
 
-router.post("/signup", (req, res) => {
-    console.log("req.body:", req.body)
-    res.send("signup")
+router.post("/signup", async (req, res) => {
+    //encrypt password
+    req.body.password = await bcrypt.hash(req.body.password, await bcrypt.genSalt(10))
+    User.create(req.body, (err, user) => {
+        //redirect to login page
+        res.redirect("/user/login")
+    })
 });
 
 // The login Routes (Get => form, post => submit form)
