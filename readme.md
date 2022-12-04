@@ -8,3 +8,8 @@
 #### Erd Diagram
 - link to ERD Diagram: https://drawsql.app/teams/sue-wirths-team/diagrams/bakery-menu-update
 
+#### WireFrames
+
+![Page1](https://github.com/SWIRTH9092/bakery/blob/main/readme/wireframes%20-%20page1.jpg "Page1")
+
+![Page2](https://github.com/SWIRTH9092/bakery/blob/main/readme/wireframes%20-%20page2.jpg "Page2")
