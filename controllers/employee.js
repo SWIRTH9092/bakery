@@ -19,14 +19,14 @@ router.get("/signup", (req, res) => {
 //res.render("employee/signup.ejs")
 });
 
-// router.post("/signup", async (req, res) => {
+router.post("/signup", async (req, res) => {
 //     //encrypt password
-//     req.body.password = await bcrypt.hash(req.body.password, await bcrypt.genSalt(10))
-//     Employee.create(req.body, (err, employee) => {
+    req.body.password = await bcrypt.hash(req.body.password, await bcrypt.genSalt(10))
+    Employee.create(req.body, (err, employee) => {
 //         //redirect to login page
-//         res.redirect("/employee/login")
-//     })
-// });
+        res.redirect("/employee/login")
+    })
+});
 
 // // The login Routes (Get => form, post => submit form)
 // router.get("/login", (req, res) => {
