@@ -18,8 +18,8 @@ const employeeSchema = new Schema({
     lastName: {type: String, required: true}
 });
 
-// make User mdoel
-const User = model("Employee", employeeSchema);
+// make Employee mdoel
+const Employee = model("Employee", employeeSchema);
 
 //-------------------------------------------
 // Export Model

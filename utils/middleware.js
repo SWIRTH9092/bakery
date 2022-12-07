@@ -8,8 +8,9 @@ const methodOverride = require("method-override") // override for put and delete
 const UserRouter = require("../controllers/user");
 const session = require('express-session'); // for ENV secret
 const MongoStore = require("connect-mongo");
-const HomeRouter = require("../controllers/home")
-const MenuUpdtRouter = require("../controllers/menuupdt")
+const HomeRouter = require("../controllers/home");  //home router for signout
+const MenuUpdtRouter = require("../controllers/menuupdt"); //router for menu update 
+const EmployeeRouter = require("../controllers/employee"); // router for employee signin
 
 //-------------------------------------------
 // Middleware
@@ -27,7 +28,8 @@ const middleware = (app) => {
     }));
     app.use("/user", UserRouter);  // to the user router
     app.use("/", HomeRouter);
-    app.use("/menuupdt", MenuUpdtRouter);
+    app.use("/menuupdt", MenuUpdtRouter);  // update menu router
+    app.use("/employee", EmployeeRouter);   // employee signin
 };
 
 //-------------------------------------------
