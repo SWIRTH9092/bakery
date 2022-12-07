@@ -19,39 +19,39 @@ router.get("/signup", (req, res) => {
 });
 
 router.post("/signup", async (req, res) => {
-//     //encrypt password
+    //encrypt password
     req.body.password = await bcrypt.hash(req.body.password, await bcrypt.genSalt(10))
     Employee.create(req.body, (err, employee) => {
-//         //redirect to login page
+        //redirect to login page
         res.redirect("/employee/login")
     })
 });
 
 // // The login Routes (Get => form, post => submit form)
-// router.get("/login", (req, res) => {
-//     res.render("employee/login.ejs")
-// });
+router.get("/login", (req, res) => {
+    res.render("employee/login.ejs")
+});
 
-// router.post("/login", (req, res) => {
-//     //get the data from the request body
-//     const { username, password } = req.body;
-//     Employee.findOne ({ username }, (err, employee) => {
-//         //checking if user exists
-//         if (!employee) {
-//             res.send("employee doesn't exist");
-//         } else {
-//             //check to see if password matches
-//             const result = bcrypt.compareSync(password, employee.password);
-//                 if (result) {
-//                     req.session.username = username;
-//                     req.session.loggedIn = true;
-//                     res.send ("logon successful");
-//                 } else {
-//                     res.send("wrong password");
-//                 }
-//             }
-//     })
-// });
+router.post("/login", (req, res) => {
+    //get the data from the request body
+    const { username, password } = req.body;
+    Employee.findOne ({ username }, (err, employee) => {
+        //checking if user exists
+        if (!employee) {
+            res.send("employee doesn't exist");
+        } else {
+            //check to see if password matches
+            const result = bcrypt.compareSync(password, employee.password);
+                if (result) {
+                    req.session.username = username;
+                    req.session.loggedIn = true;
+                    res.send ("logon successful");
+                } else {
+                    res.send("wrong password");
+                }
+            }
+    })
+});
 
 //-------------------------------------------
 // Add logout to destory the session
