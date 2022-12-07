@@ -2,7 +2,6 @@
 // Import Our Dependencies
 //-------------------------------------------
 const express = require('express') // bring this in so we can make our router
-const Fruit = require('../../../week11day3/fruit-express-mongo/models/fruit')
 const Menu = require('../models/menu')
 
 //-------------------------------------------
