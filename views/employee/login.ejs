@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<%- include("../partials/head-employee.ejs", {title: "Employee Login"}) %> 
+    <body>
+        <%- include("../partials/header-employee.ejs", {title: "Employee Login"}) %> 
+        <main>
+            <div>
+                <form action="/employee/login" method="post">
+                    <fieldset>
+                        <legend>Employee Login</legend>
+                        <label>
+                            USERNAME: <input type="text" name="username" required /><br>
+                        </label>
+                        <label>
+                            PASSWORD:<input type="password" name="password" required /><br>
+                        </label>
+                        <input type="submit" value=" Employee Login" />
+                    </fieldset>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>

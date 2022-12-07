@@ -15,14 +15,13 @@ const router = express.Router();
 //-------------------------------------------
 //  The Signup Routes (Get => form, post => submit form)
 router.get("/signup", (req, res) => {
-    res.send("made it to employee signup")
-    // res.render("employee/signup.ejs")
+    res.render("employee/signup.ejs")
 });
 
 router.post("/signup", async (req, res) => {
     //encrypt password
     req.body.password = await bcrypt.hash(req.body.password, await bcrypt.genSalt(10))
-    User.create(req.body, (err, user) => {
+    Employee.create(req.body, (err, employee) => {
         //redirect to login page
         res.redirect("/employee/login")
     })
@@ -36,9 +35,9 @@ router.get("/login", (req, res) => {
 router.post("/login", (req, res) => {
     //get the data from the request body
     const { username, password } = req.body;
-    User.findOne ({ username }, (err, employee) => {
+    Employee.findOne ({ username }, (err, employee) => {
         //checking if user exists
-        if (!user) {
+        if (!employee) {
             res.send("employee doesn't exist");
         } else {
             //check to see if password matches

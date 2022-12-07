@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head-employee.ejs", {title: "Employee Sign up"}) %> 
+
+    <body>
+        <%- include("../partials/header-employee.ejs", {title: "Employee Sign up"}) %> 
+        
+        <main>
+            <form action="/employee/signup" method="post">
+                <div>
+                    <fieldset>
+                        <legend>Employee Signin</legend>
+                        <label>
+                            USERNAME: <input type="text" name="username" required /><br>
+                        </label>
+                        <label>
+                            PASSWORD: <input type="password" name="password"
+                            required /><br>
+                        </label>
+                        <label>
+                            EMPLOYEE ID: <input type="text" name="employeeId" required /><br>
+                        </label>
+                        <label>
+                            FIRST NAME: <input type="text" name="firstName" required /><br>
+                        </label>
+                        <label>
+                            LAST NAME: <input type="text" name="lastName"
+                            required /><br>
+                        </label>
+
+                        <input type="submit" value="Create Employee Account" />
+                    </fieldset>
+                </div>
+            </form>
+        </main>
+    </body>
+</html>
