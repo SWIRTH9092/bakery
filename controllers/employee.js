@@ -15,8 +15,7 @@ const router = express.Router();
 //-------------------------------------------
 //  The Signup Routes (Get => form, post => submit form)
 router.get("/signup", (req, res) => {
-    res.send("in employee signup")
-//res.render("employee/signup.ejs")
+    res.render("employee/signup.ejs")
 });
 
 router.post("/signup", async (req, res) => {
