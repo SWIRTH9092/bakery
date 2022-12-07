@@ -2,6 +2,7 @@
 // Import Our Dependencies
 //-------------------------------------------
 const express = require('express') // bring this in so we can make our router
+const Fruit = require('../../../week11day3/fruit-express-mongo/models/fruit')
 const Menu = require('../models/menu')
 
 //-------------------------------------------
@@ -24,6 +25,19 @@ router.get('/', (req, res) => {
     })
     .catch(err => console.log(err))
 
+})
+
+//-------------------------------------------
+// Show on specific Menu Item
+//-------------------------------------------
+router.get("/:id", (req, res) => {
+//   find by id one menu item
+    Menu.findById(req.params.id)
+    .then ((menu) => {
+        console.log(menu)
+        res.render("menuupdt/show.ejs", { menu })
+    })
+    .catch(err => console.log(err))
 })
 
 

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<%- include("../partials/head-menuupdt.ejs", { title: "Show Menu Item"}) %>
+    <body>
+        <%- include("../partials/header-menuupdt.ejs", { title: "Show Menu Item"}) %> 
+        <main>
+            <h4>Name: <%= menu.name %>  </h4>
+            <h4>Description: <%= menu.description %> </h4>
+            <h4>Image Link <%= menu.imageLink %> </h4>
+            <h4>In Stock <%= menu.imageLink ? "Yes" : "No" %> </h4>
+            <h4>Type: <%= menu.type %> </h4>     
+            <h4>Price: <%= menu.price %> </h4>  
+            <h4>Menu List Order: <%= menu.listOrder %> </h4>  
+            <h4>Update Username: <%= menu.username %></h4>
+                                 
+        </main>
+    </body>
+
+</html>
