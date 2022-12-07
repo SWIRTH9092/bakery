@@ -9,7 +9,7 @@ const UserRouter = require("../controllers/user");
 const session = require('express-session'); // for ENV secret
 const MongoStore = require("connect-mongo");
 const HomeRouter = require("../controllers/home")
-const MenuRouter = require("../controllers/menu")
+const MenuUpdtRouter = require("../controllers/menuupdt")
 
 //-------------------------------------------
 // Middleware
@@ -27,7 +27,7 @@ const middleware = (app) => {
     }));
     app.use("/user", UserRouter);  // to the user router
     app.use("/", HomeRouter);
-    app.use("/menu", MenuRouter);
+    app.use("/menuupdt", MenuUpdtRouter);
 };
 
 //-------------------------------------------
