@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ("../partials/head-menuupdt.ejs", {title: "List of Bakery Items"}) %> 
+    <body>
+        <%- include ("../partials/header-menuupdt.ejs", {title: "List of Bakery Items"}) %> 
+        <main>
+            <div>
+                <% for (menu of menus) { %>
+                    <article>
+                        <a href="/menuupdt/<%= menu._id %>">
+                            <h2>
+                                <%=menu.name %>
+                            </h2> 
+                        </a>   
+                    </article>
+                <% } %>
+            </div>
+        </main>
+    </body>
+</html>
