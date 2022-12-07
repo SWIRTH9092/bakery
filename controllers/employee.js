@@ -27,7 +27,7 @@ router.post("/signup", async (req, res) => {
     })
 });
 
-// // The login Routes (Get => form, post => submit form)
+// The login Routes (Get => form, post => submit form)
 router.get("/login", (req, res) => {
     res.render("employee/login.ejs")
 });
