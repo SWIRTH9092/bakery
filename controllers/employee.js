@@ -45,7 +45,7 @@ router.post("/login", (req, res) => {
                 if (result) {
                     req.session.username = username;
                     req.session.loggedIn = true;
-                    res.send ("logon successful");
+                    res.redirect("/menuupdt")
                 } else {
                     res.send("wrong password");
                 }
