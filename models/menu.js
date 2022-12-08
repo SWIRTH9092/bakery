@@ -15,7 +15,7 @@ const menuSchema = new Schema({
     name: {type: String, required: true},
     description: {type: String, required: true},
     imageLink: {type: String },
-    inStock: { Boolean },
+    inStock: { type: Boolean },
     type: {type: String, required: true},
     price: {type: Number, required: true},
     listOrder: {type: Number, required: true},

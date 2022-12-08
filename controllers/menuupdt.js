@@ -39,7 +39,19 @@ router.get("/:id/edit", (req, res) => {
         .catch(err => console.log(err))
     })
     
-
+//-------------------------------------------
+// Update from Editing a Menu Item
+//-------------------------------------------
+router.put("/:id", (req, res) => {
+//   Change Instock check box to boolean
+    req.body.inStock = req.body.inStock === 'on' ? true : false 
+       
+//   find by id and update one menu item
+    Menu.findByIdAndUpdate(req.params.id, req.body, {new:true},(err, updatedMenu)=> {
+            console.log(updatedMenu)
+            res.redirect(`/menuupdt/${req.params.id}`)
+        })
+    })
 
 //-------------------------------------------
 // Show on specific Menu Item
