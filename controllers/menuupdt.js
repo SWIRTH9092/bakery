@@ -45,13 +45,35 @@ router.get("/:id/edit", (req, res) => {
 router.put("/:id", (req, res) => {
 //   Change Instock check box to boolean
     req.body.inStock = req.body.inStock === 'on' ? true : false 
-       
+
 //   find by id and update one menu item
     Menu.findByIdAndUpdate(req.params.id, req.body, {new:true},(err, updatedMenu)=> {
             console.log(updatedMenu)
             res.redirect(`/menuupdt/${req.params.id}`)
         })
     })
+
+//-------------------------------------------
+// display for for new menu item
+//-------------------------------------------
+router.get("/new", (req, res) => {
+    res.render("menuupdt/new.ejs")
+})
+
+//-------------------------------------------
+// Add a new a Menu Item to Mongodb
+//-------------------------------------------
+router.post("/", (req, res) => {
+    //   Change Instock check box to boolean
+        req.body.inStock = req.body.inStock === 'on' ? true : false 
+           
+    //   create a new item
+    Menu.create(req.body, (err, createdMenu) =>{
+        console.log('created' , createdMenu, err)
+        res.redirect('/menuupdt')
+        })
+    })
+
 
 //-------------------------------------------
 // Show on specific Menu Item
