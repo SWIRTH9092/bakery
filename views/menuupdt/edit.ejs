@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ("../partials/head-menuupdt.ejs", {title: "Edit Menu Item"}) %>
+    <body>
+        <%- include ("../partials/header-menuupdt.ejs", {title: "Edit Menu Item"}) %>  
+        <main>
+            <form action="/menuupdt/<%= menu._id %>?_method=PUT" method="post" >
+                <fieldset>
+                    <legend>Edit for <%= menu.name %> </legend>
+                    <label>
+                        NAME: <input type="text" name="name" value="<%= menu.name %>"
+                            placeholder="enter an item name" /><br>
+                    </label>
+                    <label>
+                        DESCRIPTION: <input type="text" name="description"
+                        value="<%= menu.description %>" placeholder="enter an item description"
+                        /><br>
+                    </label>
+                    <label>
+                        IMAGE LINK: <input type="text" name="imageLink"
+                            value="<%= menu.imageLink %>" placeholder="enter an imageLink" /><br>
+                    </label>
+                    <label> 
+                        IN STOCK: <input type="checkbox" name="inStock"
+                            value="<%= menu.inStock ? "CHECKED" : "" %>" /><br>
+                    </label>
+                    <label>TYPE: </label>
+                    <input type="radio" id="coffee" name="type" value="coffee"
+                        <%= menu.type ==="coffee" ? "CHECKED" : "" %> >
+                    <label for="coffee">coffee</label>
+                    <input type="radio" id="tea" name="type" value="tea"
+                        <%= menu.type ==="tea" ? "CHECKED" : "" %> >
+                        <label for="tea">tea</label> 
+                    <input type="radio" id="bread" name="type" value="bread"
+                        <%= menu.type ==="bread" ? "CHECKED" : "" %> >
+                        <label for="bread">bread</label>                   
+                    <input type="radio" id="pastry" name="type" value="pastry"
+                        <%= menu.type ==="pastry" ? "CHECKED" : "" %> >
+                        <label for="pastry">pastry</label> <br>    
+                    <label> 
+                        PRICE: <input type="number" name="price" /><br>
+                    </label>
+                    <label> 
+                        MENU LIST ORDER: <input type="number" name="listOrder" /><br>
+                    </label>
+                    <p>LAST UPDATE USERNAME: "<%= menu.username %>"</p>
+                    <input type="submit" value="Update <%= menu.name%>" />
+                </fieldset>
+            </form>
+        </main>
+    </body>
+</html>

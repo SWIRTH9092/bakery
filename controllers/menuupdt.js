@@ -10,7 +10,7 @@ const Menu = require('../models/menu')
 const router = express.Router() 
 
 //-------------------------------------------
-// create Route
+// routers for menuupdt
 //-------------------------------------------
 
 //  get all menu items and render them to the screen
@@ -25,6 +25,21 @@ router.get('/', (req, res) => {
     .catch(err => console.log(err))
 
 })
+
+//-------------------------------------------
+// Edit on specific Menu Item
+//-------------------------------------------
+router.get("/:id/edit", (req, res) => {
+    //   find by id one menu item
+        Menu.findById(req.params.id)
+        .then ((menu) => {
+            console.log(menu)
+            res.render("menuupdt/edit.ejs", { menu })
+        })
+        .catch(err => console.log(err))
+    })
+    
+
 
 //-------------------------------------------
 // Show on specific Menu Item
