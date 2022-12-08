@@ -11,7 +11,11 @@
             <h4>Price: <%= menu.price %> </h4>  
             <h4>Menu List Order: <%= menu.listOrder %> </h4>  
             <h4>Update Username: <%= menu.username %></h4>
-            <a href="/menuupdt/<%= menu._id%>/edit"><button>Edit Menu Item</button>
+            <a href="/menuupdt/<%= menu._id %>/edit"><button>Edit Menu Item</button></a>
+            <form action="/menuupdt/<%= menu._id %>?_method=DELETE" method="POST">
+                <input type = "submit" value="Delete Menu Item"/>
+            </form>
+            </form>
         </main>
     </body>
 

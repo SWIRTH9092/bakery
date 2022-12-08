@@ -74,6 +74,16 @@ router.post("/", (req, res) => {
         })
     })
 
+//-------------------------------------------
+// delete route for a menu item
+//-------------------------------------------
+router.delete('/:id', async (req, res) => {
+    console.log("made it to delete")
+    const deletedMenu = await Menu.findByIdAndDelete(req.params.id)
+    if(deletedMenu){
+        res.redirect('/menuupdt/')
+    }
+})
 
 //-------------------------------------------
 // Show on specific Menu Item
