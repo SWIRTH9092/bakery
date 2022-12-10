@@ -2,19 +2,31 @@
 <html lang="en">
 <%- include ("../partials/head-menuupdt.ejs", {title: "List of Bakery Items"}) %> 
     <body>
-        <%- include ("../partials/header-menuupdt.ejs", {title: "List of Bakery Items"}) %> 
-        <main>
-            <div>
-                <% for (menu of menus) { %>
-                    <article>
-                        <a href="/menuupdt/<%= menu._id %>">
-                            <h2>
-                                <%=menu.name %>
-                            </h2> 
-                        </a>   
-                    </article>
-                <% } %>
-            </div>
-        </main>
+        <div id="grid-container">
+            <%- include ("../partials/header") %> 
+            <main>
+                <div id="grid-row-2 nav-menu" >
+                    <nav id="nav-menu">
+                        <!-- <a href="/menuupdt">BakeryHome</a> -->
+                        <a href="/menuupdt/new">New</a>
+                        <a href="/employee/logout">Logout</a>                       
+                    </nav>
+                </div> 
+                <div id="grid-row-3">
+                    <h4 class="hd-pg-title">List of Bakery Items</h4>  
+                </div id="grid-row-4">
+                <div>
+                    <% for (menu of menus) { %>
+                        <article>
+                            <a href="/menuupdt/<%= menu._id %>">
+                                <h2>
+                                    <%=menu.name %>
+                                </h2> 
+                            </a>   
+                        </article>
+                    <% } %>
+                </div>
+            </main>
+        </div>
     </body>
 </html>
