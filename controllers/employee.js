@@ -13,10 +13,16 @@ const router = express.Router();
 //-------------------------------------------
 // Routes
 //-------------------------------------------
+// home page to signup or login
+router.get("/", (req, res) => {
+    res.render("employee/home.ejs")
+});
+
 //  The Signup Routes (Get => form, post => submit form)
 router.get("/signup", (req, res) => {
     res.render("employee/signup.ejs")
 });
+
 
 router.post("/signup", async (req, res) => {
     //encrypt password
