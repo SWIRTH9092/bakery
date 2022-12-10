@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("../partials/head-employee.ejs", {title: "Employee Sign up"}) %> 
-
+    <%- include("../partials/head.ejs", {title: "Employee Sign Up"}) %> 
     <body>
-        <%- include("../partials/header-employee.ejs", {title: "Employee Sign up"}) %> 
-        
-        <main>
-            <form action="/employee/signup" method="post">
-                <div>
-                    <fieldset>
-                        <legend>Employee Signup</legend>
-                        <label>
-                            USERNAME: <input type="text" name="username" required /><br>
-                        </label>
-                        <label>
-                            PASSWORD: <input type="password" name="password"
-                            required /><br>
-                        </label>
-
-                        <label>
-                            EMPLOYEE ID: <input type="text" name="employeeId" required /><br>
-                        </label>
-                        
-                        <label>
-                            FIRST NAME: <input type="text" name="firstName" required /><br>
-                        </label>
-                        <label>
-                            LAST NAME: <input type="text" name="lastName"
-                            required /><br>
-                        </label>
-
-                        <input type="submit" value="Create Employee Signin" />
-                    </fieldset>
+        <div id="grid-container">
+        <%- include("../partials/header.ejs") %> 
+            <main>
+                <div id="grid-row-2 nav-menu" >
+                    <nav id="nav-menu">
+                        <a href="/employee">Home</a>
+                        <a href="/employee/login">LogIn</a>
+                    </nav>
+                <div id="grid-row-3">
+                    <h4 class="hd-pg-title">Employee Sign Up</h4>  
                 </div>
-            </form>
-        </main>
+                <div id="grid-row-4">
+                    <form action="/employee/signup" method="post">
+                        <div>
+                            <fieldset>
+                                <label>
+                                    USERNAME: <input type="text" name="username" required /><br><br>
+                                </label>
+                                <label>
+                                    PASSWORD: <input type="password" name="password"
+                                    required /><br><br>
+                                </label>
+
+                                <label>
+                                    EMPLOYEE ID: <input type="text" name="employeeId" required /><br><br>
+                                </label>
+                                
+                                <label>
+                                    FIRST NAME: <input type="text" name="firstName" required /><br><br>
+                                </label>
+                                <label>
+                                    LAST NAME: <input type="text" name="lastName"
+                                    required /><br><br>
+                                </label>
+
+                                <input type="submit" value="Create Signin" id="button-grid-3"/>
+                            </fieldset>
+                    </div>
+                </form>
+            </main>
+        </div>
     </body>
 </html>
