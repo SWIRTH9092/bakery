@@ -1,22 +1,37 @@
 <!DOCTYPE html>
-<%- include("../partials/head-employee.ejs", {title: "Employee Login"}) %> 
+<%- include("../partials/head.ejs", {title: "Employee Login" }) %> 
     <body>
-        <%- include("../partials/header-employee.ejs", {title: "Employee Login"}) %> 
-        <main>
-            <div>
-                <form action="/employee/login" method="post">
-                    <fieldset>
-                        <legend>Employee Login</legend>
-                        <label>
-                            USERNAME: <input type="text" name="username" required /><br>
-                        </label>
-                        <label>
-                            PASSWORD:<input type="password" name="password" required /><br>
-                        </label>
-                        <input type="submit" value=" Employee Login" />
-                    </fieldset>
-                </form>
-            </div>
-        </main>
+        <div id="grid-container">
+            <%- include("../partials/header.ejs") %> 
+            <main>
+                <div id="grid-row-2 nav-menu" >
+                    <!-- <ul id="nav-menu">
+                        <li><a href="/employee">Home</a></li>
+                        <li><a href="/employee/signup">Signup</a></li>
+                    </ul> -->
+                    <nav id="nav-menu">
+                        <a href="/employee">Home</a>
+                        <a href="/employee/signup">Signup</a>
+                    </nav>
+                </div> 
+                <div id="grid-row-3">
+                    <h4 class="hd-pg-title">Employee Login</h4>  
+                </div>
+                <div id="grid-row-4">
+                    <form action="/employee/login" method="post">
+                        <fieldset>
+                            <!-- <legend>Employee Login</legend> -->
+                            <label>
+                                USERNAME: <input type="text" name="username" required /><br><br>
+                            </label>
+                            <label>
+                                PASSWORD:<input type="password" name="password" required /><br><br>
+                            </label>
+                            <input type="submit" value="Login" id="button-grid-3" />
+                        </fieldset>
+                    </form>
+                </div>
+            </main>
+        </div>
     </body>
 </html>

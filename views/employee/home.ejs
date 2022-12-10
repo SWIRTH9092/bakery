@@ -3,10 +3,13 @@
  <%- include("../partials/head.ejs", {title: "Employee Home"}) %> 
     <div id="grid-container">
         <body>
-            <%- include("../partials/header.ejs", {title: "Employee Home"}) %> 
+            <%- include("../partials/header.ejs") %> 
             <main>
                 <div id="grid-row-2"></div>
                 <div id="grid-row-3">
+                    <h4 class="hd-pg-title">Employee Home</h4>
+                </div>
+                <div id="grid-row-4">
                     <a href="/employee/signup"><button id="button-grid-3">Signup</button></a>
                     <a href="/employee/login"><button id="button-grid-3">Login</button></a>    
                 </div>
