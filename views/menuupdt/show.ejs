@@ -1,22 +1,64 @@
 <!DOCTYPE html>
 <%- include("../partials/head-menuupdt.ejs", { title: "Show Menu Item"}) %>
     <body>
-        <%- include("../partials/header-menuupdt.ejs", { title: "Show Menu Item"}) %> 
-        <main>
-            <h4>Name: <%= menu.name %>  </h4>
-            <h4>Description: <%= menu.description %> </h4>
-            <h4>Image Link <%= menu.imageLink %> </h4>
-            <h4>In Stock <%= menu.imageLink ? "Yes" : "No" %> </h4>
-            <h4>Type: <%= menu.type %> </h4>     
-            <h4>Price: <%= menu.price %> </h4>  
-            <h4>Menu List Order: <%= menu.listOrder %> </h4>  
-            <h4>Update Username: <%= menu.username %></h4>
-            <a href="/menuupdt/<%= menu._id %>/edit"><button>Edit Menu Item</button></a>
-            <form action="/menuupdt/<%= menu._id %>?_method=DELETE" method="POST">
-                <input type = "submit" value="Delete Menu Item"/>
-            </form>
-            </form>
-        </main>
+        <div id="grid-container">
+            <%- include("../partials/header.ejs") %> 
+            <main>
+                <div id="grid-row-2 nav-menu" >
+                    <nav id="nav-menu">
+                        <a href="/menuupdt">BakeryHome</a>
+                        <a href="/menuupdt/new">New</a>
+                        <a href="/menuupdt/edit">Edit</a>  
+                        <a href="/employee/logout">Logout</a> 
+                    </nav>
+                </div> 
+                <div id="grid-row-3">
+                    <h4 class="hd-pg-title">View Bakery Item</h4>  
+                </div>
+                <div id="grid-row-4">
+                    <table>
+                        <tr>
+                            <td>Name:</td>
+                            <td><%= menu.name %></td>
+                        </tr>
+                        <tr>
+                            <td>Description:</td>
+                            <td><%= menu.description %></td>
+                        </tr>
+                        <tr>
+                            <td>Image Link:</td>
+                            <td><%= menu.imageLink %></td>
+                        </tr>
+                        <tr>
+                            <td>In Stock:</td>
+                            <td><%= menu.inStock ? "Yes" : "No" %></td>
+                        </tr>
+                        <tr>
+                            <td>Type:</td>
+                            <td><%= menu.type  %></td>
+                        </tr>
+                        <tr>
+                            <td>Price:</td>
+                            <td><%= menu.price  %></td>
+                        </tr>
+                        <tr>
+                            <td>Menu List Order: </td>
+                            <td><%= menu.listOrder  %></td>
+                        </tr>
+                        <tr>
+                            <td>Last Update Username: </td>
+                            <td><%= menu.username  %><br></td>
+                        </tr>
+                    </table>
+
+                    <a href="/menuupdt/<%= menu._id %>/edit" ><button id="button-grid">Edit Item</button></a>
+
+                    <form action="/menuupdt/<%= menu._id %>?_method=DELETE" method="POST">
+                        <input type = "submit" value="Delete Item" id="button-grid"/>
+                    </form>
+                </div>
+            </main>
+        </div>
     </body>
 
 </html>

@@ -108,18 +108,20 @@ row 4 - webpage   */
     padding: 0 .25rem 0 .25rem;
   }
 
-  #button-grid-3 {
+  #button-grid {
     display:  inline-block;
     background-color:#133863;;
     color:  #E1ECF9;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
-    border-color:#E1ECF9;
-    border: 20px;
+    border-color: #E1ECF9;
+    border: 5px;
+    border-style: solid;
     border-radius: 8px;
-    padding: 10px;
+    padding: 5px;
     width: 15rem;
+    margin-top: 1rem;
   }
 
   fieldset {
@@ -129,3 +131,17 @@ row 4 - webpage   */
     font-size: 1.25rem;
     border: none;
   }
+  table, td, th {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    font-size: 1.5rem;
+    padding: 5px;
+    color: #133863;
+  }
+
+  td {
+    border: 1px solid black;
+    border: none;
+   }
