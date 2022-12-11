@@ -70,6 +70,13 @@ row 4 - webpage   */
     text-align: center;
   }
 
+  #grid-row-4-add {
+    display: inline-block;
+    justify-items: top;
+    align-items:top;
+    justify-content: space-between;
+  }
+
   .hd-image-ban {
     width: 100%;
   }
@@ -108,9 +115,10 @@ row 4 - webpage   */
     padding: 0 .25rem 0 .25rem;
   }
 
+  /* for display of buttons at bottom of webpage */ 
   #button-grid {
     display:  inline-block;
-    background-color:#133863;;
+    background-color:#133863;
     color:  #E1ECF9;
     font-weight: bold;
     font-size: 1.5rem;
@@ -124,6 +132,7 @@ row 4 - webpage   */
     margin-top: 1rem;
   }
 
+   /* for add and edit forms */
   fieldset {
     padding: 1rem 0 1rem 0;
     margin-left: 5px;
@@ -131,6 +140,8 @@ row 4 - webpage   */
     font-size: 1.25rem;
     border: none;
   }
+
+  /* show (view) of data */
   table, td, th {
     border-collapse: collapse;
     margin-left: auto;
@@ -145,3 +156,73 @@ row 4 - webpage   */
     border: 1px solid black;
     border: none;
    }
+
+  /* for display of bakery items on index.ejs */ 
+  #bk-item {
+    display: inline-block;
+    justify-content: top;
+    /* justify-content: space-between;
+    justify-items: top;
+    align-items: top; */
+    /* text-align: justify; */
+    /* margin: 0 40px 0 0; */
+    margin: 0 auto;
+    width: 275px;
+    height: 325px;
+    text-align: center;
+    padding: 2rem 0 2rem 0;
+    background-color: #133863;
+    margin: 20px;
+    border: 5px solid #091534;
+    border-radius: 8px; 
+  }
+
+.center-md {
+  justify-content: center;
+}
+
+.row {
+  margin: 0;
+  flex: 0 1 auto;
+  flex-flow: row wrap;
+}
+.bk-info-container {
+  padding: 2px 16px;
+  position: relative;
+  text-align: center;
+  background-color: #133863;
+  display: block;
+}
+
+.bk-image {
+  height: 250px;
+  width: auto;
+  max-width: 250px;
+  text-align: center;
+  border: 10px;
+  border-radius: 8px;
+}
+.bk-container-text {
+  color:  #E1ECF9;
+  background-color: #133863;
+  font-size: 2rem;
+}
+.bk-container-button {
+  background-color: #133863;
+  font-weight: bold;
+
+  color:#133863;
+  position: relative;
+}
+
+#bk-button {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color:#E1ECF9;
+  border-color: #133863;
+  border: 8px;
+  font-size: 1.25rem;
+  color: #133863;
+  border-radius: 8px;
+  position: relative;
+}

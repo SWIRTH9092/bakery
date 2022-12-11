@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include ("../partials/head-menuupdt.ejs", {title: "List of Bakery Items"}) %> 
+<%- include ("../partials/head.ejs", {title: "List of Bakery Items"}) %> 
     <body>
         <div id="grid-container">
-            <%- include ("../partials/header") %> 
+            <%- include ("../partials/header.ejs") %> 
             <main>
                 <div id="grid-row-2 nav-menu" >
                     <nav id="nav-menu">
-                        <!-- <a href="/menuupdt">BakeryHome</a> -->
                         <a href="/menuupdt/new">New</a>
-                        <a href="/employee/logout">Logout</a>                       
+                        <a href="/employee/logout">Logout</a>                 
                     </nav>
                 </div> 
                 <div id="grid-row-3">
                     <h4 class="hd-pg-title">List of Bakery Items</h4>  
                 </div>
-                <div id="grid-row-4">
-                    <% for (menu of menus) { %>
-                        <article>
-                            <a href="/menuupdt/<%= menu._id %>">
-                                <h2>
-                                    <%=menu.name %>
-                                </h2> 
-                            </a>   
-                        </article>
-                    <% } %>
+                <div id="grid-row-4 grid-row-4-add">
+                    <% menus.forEach ((menu, index) => { %>
+                        <div id="bk-item">
+                            <a href="/menuupdt/<%= menu._id %>" >
+                                <img src="<%= menu.imageLink %>" class="bk-image" alt="<%=menu.name %>">
+                            </a>
+                            <div class="bk-info-container" id="grid-row-4-add">
+                                <h4 class="bk-container-text"><%=menu.name%></b></h4>
+                                <div class="bk-container-button">
+                                    <a href="/menuupdt/<%= menu._id %>"><button id="bk-button">View</button></a>  
+                                    <a href="/menuupdt/<%= menu._id %>/edit"><button id="bk-button">Edit</button></a>  
+
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
                 </div>
             </main>
         </div>
