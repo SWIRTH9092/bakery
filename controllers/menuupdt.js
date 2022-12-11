@@ -31,7 +31,8 @@ router.get('/', (req, res) => {
         // Menu.find({username: req.session.username})
         
     // Get all menus items from mongodb and send them back
-    Menu.find({})
+    // added sort to display menu in list order
+    Menu.find().sort({listOrder: 1})
     .then((menus) => {
         console.log(menus)
         res.render('menuupdt/index.ejs', { menus })
