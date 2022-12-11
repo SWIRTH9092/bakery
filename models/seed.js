@@ -51,7 +51,7 @@ mongoose.connection.on('open', () => {
         inStock: false,
         type: 'pastry',
         price: 4.35,
-        listOrder: 2,
+        listOrder: 4,
         username: 'swirth9092-x'},
         {menuItemID: 'B00001',
         name: 'Dinner Roll',
@@ -60,7 +60,7 @@ mongoose.connection.on('open', () => {
         inStock: true,
         type: 'bread',
         price: 4.59,
-        listOrder: 50,
+        listOrder: 80,
         username: 'swirth9092-x'},
         {menuItemID: 'P00003',
         name: 'Chocolate Eclair',
@@ -69,7 +69,7 @@ mongoose.connection.on('open', () => {
         inStock: false,
         type: 'pastry',
         price: 5.49,
-        listOrder: 3,
+        listOrder: 26,
         username: 'swirth9092-x'},
       ]
       
