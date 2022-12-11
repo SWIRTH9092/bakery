@@ -1,8 +1,5 @@
-/* import font */
 @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One');
-
- /* media css */
- @media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
   .hd-title { 
     font-size: 1rem;
     font-family: sans-serif;
@@ -19,6 +16,9 @@
   #button-grid-3 {
     font-size: 1rem;
     width: 10rem;
+  }
+  #bk-item {
+    display: inline;
   }
 }
   /* end media css */
@@ -177,16 +177,7 @@ row 4 - webpage   */
     border-radius: 8px; 
   }
 
-.center-md {
-  justify-content: center;
-}
-
-.row {
-  margin: 0;
-  flex: 0 1 auto;
-  flex-flow: row wrap;
-}
-.bk-info-container {
+  .bk-info-container {
   padding: 2px 16px;
   position: relative;
   text-align: center;
@@ -205,12 +196,11 @@ row 4 - webpage   */
 .bk-container-text {
   color:  #E1ECF9;
   background-color: #133863;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .bk-container-button {
   background-color: #133863;
   font-weight: bold;
-
   color:#133863;
   position: relative;
 }
@@ -226,3 +216,32 @@ row 4 - webpage   */
   border-radius: 8px;
   position: relative;
 }
+
+/* media only query */
+@media only screen and (max-width: 600px) {
+  .hd-title { 
+    font-size: 1.75rem;
+    font-family: sans-serif;
+  }
+  .hd-tagline {
+    font-size: 1rem;
+    font-family: sans-serif;
+  }
+  .hd-pg-title {
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: rem;
+  }
+  #button-grid-3 {
+    font-size: 1rem;
+    width: 10rem;
+  }
+  #nav-menu a {
+    margin: .5rem;
+    color:#133863;
+    font-size: 1.25rem;
+    padding: 0 .25rem 0 .25rem;
+  }
+
+}
+  /* end media css */
