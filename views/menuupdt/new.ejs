@@ -1,52 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include ("../partials/head-menuupdt.ejs", {title: "Add Menu Item"}) %>
+<%- include ("../partials/head.ejs", {title: "Add Menu Item"}) %>
     <body>
-        <%- include ("../partials/header-menuupdt.ejs", {title: "Add Menu Item"}) %>  
-        <main>
-            <form action="/menuupdt/" method="POST" >
-                <fieldset>
-                    <legend>Add a Menu Item</legend>
-                    <label>
-                        MENU ITEM ID: <input type="text" name="menuItemID"
-                            placeholder="enter an item ID" /><br>
-                    </label>
-                    <label>
-                        NAME: <input type="text" name="name"
-                            placeholder="enter an item name" /><br>
-                    </label>
-                    <label>
-                        DESCRIPTION: <input type="text" name="description"
-                        placeholder="enter an item description"
-                        /><br>
-                    </label>
-                    <label>
-                        IMAGE LINK: <input type="text" name="imageLink"
-                            placeholder="enter an imageLink" /><br>
-                    </label>
+        <div id="grid-container">
+            <%- include ("../partials/header.ejs") %>  
+            <main>
+                <div id="grid-row-2 nav-menu">
+                    <nav id="nav-menu">
+                        <a href="/menuupdt">BakeryHome</a>
+                        <a href="/employee/logout">Logout</a>  
+                    </nav>   
+                </div>
+                <div id="grid-row-3">
+                    <h4 class="hd-pg-title">Add Menu Item</h4>  
+                </div>
+                <div id="grid-row-4">      
+                    <form action="/menuupdt/" method="POST" >
+                        <fieldset>
+                            <label>
+                                MENU ITEM ID: <input type="text" name="menuItemID"
+                                    placeholder="enter an item ID" /><br><br>
+                            </label>
+                            <label>
+                                NAME: <input type="text" name="name"
+                                    placeholder="enter an item name" /><br><br>
+                            </label>
+                            <label>
+                                DESCRIPTION: <input type="text" name="description"
+                                placeholder="enter an item description"
+                                /><br><br>
+                            </label>
+                            <label>
+                                IMAGE LINK: <input type="text" name="imageLink"
+                                    placeholder="enter an imageLink" /><br><br>
+                            </label>
 
-                    <label> 
-                        IN STOCK: <input type="checkbox" name="inStock" /><br>
-                    </label>
-                    <label>TYPE: </label>
-                        <input type="radio" id="coffee" name="type" value="coffee" checked >
-                            <label for="coffee">coffee</label>
-                        <input type="radio" id="tea" name="type" value="tea" >
-                            <label for="tea">tea</label> 
-                        <input type="radio" id="bread" name="type" value="bread" >
-                            <label for="bread">bread</label>                   
-                        <input type="radio" id="pastry" name="type" value="pastry" >
-                            <label for="pastry">pastry</label> <br>    
+                            <label> 
+                                IN STOCK: <input type="checkbox" name="inStock" /><br>
+                            </label>
+                            <label>TYPE: </label>
+                                <input type="radio" id="coffee" name="type" value="coffee" checked >
+                                    <label for="coffee">coffee</label>
+                                <input type="radio" id="tea" name="type" value="tea" >
+                                    <label for="tea">tea</label> 
+                                <input type="radio" id="bread" name="type" value="bread" >
+                                    <label for="bread">bread</label>                   
+                                <input type="radio" id="pastry" name="type" value="pastry" >
+                                    <label for="pastry">pastry</label> <br><br>    
 
-                    <label> 
-                        PRICE: <input type="text" name="price" placeholder="enter a price" /><br>
-                    </label>
-                    <label> 
-                        MENU LIST ORDER: <input type="number" name="listOrder" placeholder="enter sort list order" /><br>
-                    </label>
-                    <input type="submit" value="Create menu Item" />
-                </fieldset>
-            </form>
-        </main>
+                            <label> 
+                                PRICE: <input type="text" name="price" placeholder="enter a price" /><br><br>
+                            </label>
+                            <label> 
+                                MENU LIST ORDER: <input type="number" name="listOrder" placeholder="enter sort list order" /><br><br><br>
+                            </label>
+                            <input type="submit" value="Create Item" id="button-grid" />
+                        </fieldset>
+                    </form>
+                </div>  
+            </main>
+        </div>
     </body>
 </html>
