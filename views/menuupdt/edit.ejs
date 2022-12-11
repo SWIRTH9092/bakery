@@ -1,54 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include ("../partials/head-menuupdt.ejs", {title: "Edit Menu Item"}) %>
+<%- include ("../partials/head.ejs", {title: "Edit Menu Item"}) %>
     <body>
-        <%- include ("../partials/header-menuupdt.ejs", {title: "Edit Menu Item"}) %>  
-        <main>
-            <form action="/menuupdt/<%= menu._id %>?_method=PUT" method="post" >
-                <fieldset>
-                    <legend>Edit for <%= menu.name %> </legend>
-                    <label>
-                        NAME: <input type="text" name="name" value="<%= menu.name %>"
-                            placeholder="enter an item name" /><br>
-                    </label>
-                    <label>
-                        DESCRIPTION: <input type="text" name="description"
-                        value="<%= menu.description %>" placeholder="enter an item description"
-                        /><br>
-                    </label>
-                    <label>
-                        IMAGE LINK: <input type="text" name="imageLink"
-                            value="<%= menu.imageLink %>" placeholder="enter an imageLink" /><br>
-                    </label>
+        <div id="grid-container">
+            <%- include ("../partials/header.ejs") %>  
+            <main>
+                <div id="grid-row-2 nav-menu">
+                    <nav id="nav-menu">
+                        <a href="/menuupdt">BakeryHome</a>
+                        <a href="/menuupdt/new">New</a>
+                        <a href="/employee/ougout">Logout</a>
+                    </nav>
+                </div>
+                <div id="grid-row-3">
+                    <h4 class="hd-pg-title">Edit Menu Item</h4>
+                </div>
+                <div id="grid-row-4"> 
+                    <form action="/menuupdt/<%= menu._id %>?_method=PUT" method="post" >
+                        <fieldset>
+                            <label>
+                                NAME: <input type="text" name="name" value="<%= menu.name %>"
+                                    placeholder="enter an item name" /><br><br>
+                            </label>
+                            <label>
+                                DESCRIPTION: <input type="text" name="description"
+                                value="<%= menu.description %>" placeholder="enter an item description"
+                                /><br><br>
+                            </label>
+                            <label>
+                                IMAGE LINK: <input type="text" name="imageLink"
+                                    value="<%= menu.imageLink %>" placeholder="enter an imageLink" /><br><br>
+                            </label>
 
-                    <label> 
-                        IN STOCK: <input type="checkbox" name="inStock"
-                            <%= menu.inStock ? "CHECKED" : "" %> /><br>
-                    </label>
-                    <label>TYPE: </label>
-                    <input type="radio" id="coffee" name="type" value="coffee"
-                        <%= menu.type ==="coffee" ? "CHECKED" : "" %> >
-                    <label for="coffee">coffee</label>
-                    <input type="radio" id="tea" name="type" value="tea"
-                        <%= menu.type ==="tea" ? "CHECKED" : "" %> >
-                        <label for="tea">tea</label> 
-                    <input type="radio" id="bread" name="type" value="bread"
-                        <%= menu.type ==="bread" ? "CHECKED" : "" %> >
-                        <label for="bread">bread</label>                   
-                    <input type="radio" id="pastry" name="type" value="pastry"
-                        <%= menu.type ==="pastry" ? "CHECKED" : "" %> >
-                        <label for="pastry">pastry</label> <br>    
+                            <label> 
+                                IN STOCK: <input type="checkbox" name="inStock"
+                                    <%= menu.inStock ? "CHECKED" : "" %> /><br><br>
+                            </label>
+                            <label>TYPE: </label>
+                            <input type="radio" id="coffee" name="type" value="coffee"
+                                <%= menu.type ==="coffee" ? "CHECKED" : "" %> >
+                            <label for="coffee">coffee</label>
+                            <input type="radio" id="tea" name="type" value="tea"
+                                <%= menu.type ==="tea" ? "CHECKED" : "" %> >
+                                <label for="tea">tea</label> 
+                            <input type="radio" id="bread" name="type" value="bread"
+                                <%= menu.type ==="bread" ? "CHECKED" : "" %> >
+                                <label for="bread">bread</label>                   
+                            <input type="radio" id="pastry" name="type" value="pastry"
+                                <%= menu.type ==="pastry" ? "CHECKED" : "" %> >
+                                <label for="pastry">pastry</label> <br><br>    
 
-                    <label> 
-                        PRICE: <input type="text" name="price" value="<%= menu.price %>" /><br>
-                    </label>
-                    <label> 
-                        MENU LIST ORDER: <input type="number" name="listOrder" value="<%= menu.listOrder %>" /><br>
-                    </label>
-                    <p>LAST UPDATE USERNAME: "<%= menu.username %>"</p>
-                    <input type="submit" value="Update <%= menu.name%>" />
-                </fieldset>
-            </form>
-        </main>
+                            <label> 
+                                PRICE: <input type="text" name="price" value="<%= menu.price %>" /><br><br>
+                            </label>
+                            <label> 
+                                MENU LIST ORDER: <input type="number" name="listOrder" value="<%= menu.listOrder %>" /><br>
+                            </label><br>
+                            <p>LAST UPDATE USERNAME: "<%= menu.username %>"</p><br><br>
+                            <input type="submit" value="Update" id="button-grid" />
+                        </fieldset>
+                    </form>
+                </div>
+            </main>
+        </div>
     </body>
 </html>
