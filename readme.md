@@ -9,7 +9,7 @@
 
 #### Website Page
 
-[Imgur](https://i.imgur.com/OHfDg14.png)
+![Imgur](https://i.imgur.com/OHfDg14.png)
 
 
 #### Links to app:
