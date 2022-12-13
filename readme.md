@@ -76,12 +76,6 @@
 - HTML
 - CSS
 
-#### Trello board
-- link to Trello board: https://trello.com/b/Mj7OY01Z/bakery-menu-update
-
-#### Erd Diagram
-- link to ERD Diagram: https://drawsql.app/teams/sue-wirths-team/diagrams/bakery-menu-update
-
 #### WireFrames
 
 - Wire Frame Images Employee Home, Signup and Login
