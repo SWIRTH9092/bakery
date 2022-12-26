@@ -88,3 +88,4 @@
 - Add editing for required fields
 - Edit price to valid a number
 - Add error checking on all MongoDB Add and Update functions
+- Create a companion website for customers to place online orders for Sue's Gluten Free Bakery

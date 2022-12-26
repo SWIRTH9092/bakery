@@ -20,16 +20,16 @@
                         <fieldset>
                             <label>
                                 NAME: <input type="text" name="name" value="<%= menu.name %>"
-                                    placeholder="enter an item name" /><br><br>
+                                    placeholder="enter an item name" required /><br><br>
                             </label>
                             <label>
                                 DESCRIPT: <input type="text" name="description"
-                                value="<%= menu.description %>" placeholder="enter an item description" style="width: 15rem"
+                                value="<%= menu.description %>" placeholder="enter an item description" style="width: 15rem" required
                                 /><br><br>
                             </label>
                             <label>
                                 IMAGE: <input type="text" name="imageLink"
-                                    value="<%= menu.imageLink %>" placeholder="enter an imageLink" style="width: 15rem" /><br><br>
+                                    value="<%= menu.imageLink %>" placeholder="enter an imageLink" style="width: 15rem" required /><br><br>
                             </label>
 
                             <label> 
@@ -51,10 +51,11 @@
                                 <label for="pastry">pastry</label> <br><br>    
 
                             <label> 
-                                PRICE: <input type="text" name="price" value="<%= menu.price %>" /><br><br>
+                                PRICE: <input type="number" name="price" value="<%= menu.price %>" 
+                                step=".01" min="0" max="10" required /><br><br>
                             </label>
                             <label> 
-                                MENU ORDER: <input type="number" name="listOrder" value="<%= menu.listOrder %>" /><br>
+                                MENU ORDER: <input type="number" name="listOrder" value="<%= menu.listOrder %>" required /><br>
                             </label><br>
                             <p>LAST UPDT USERNAME: "<%= menu.username %>"</p><br><br>
                             <input type="submit" value="Update" id="button-grid" />

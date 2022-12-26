@@ -19,19 +19,19 @@
                         <fieldset>
                             <label>
                                 MENU ITEM ID: <input type="text" name="menuItemID"
-                                    placeholder="enter an item ID" /><br><br>
+                                    placeholder="enter an item ID" required /><br><br>
                             </label>
                             <label>
                                 NAME: <input type="text" name="name"
-                                    placeholder="enter an item name" /><br><br>
+                                    placeholder="enter an item name" required /><br><br>
                             </label>
                             <label>
                                 DESCRIPT: <input type="text" name="description"
-                                placeholder="enter an item description" style="width: 15rem"
+                                placeholder="enter an item description" style="width: 15rem" required
                                 /><br><br>
                             </label>
                             <label>
-                                IMAGE: <input type="text" name="imageLink"
+                                IMAGE: <input type="text" name="imageLink" required
                                     placeholder="enter an imageLink" style="width: 15rem" /><br><br>
                             </label>
 
@@ -49,10 +49,10 @@
                                     <label for="pastry">pastry</label> <br><br>    
 
                             <label> 
-                                PRICE: <input type="text" name="price" placeholder="enter a price" /><br><br>
+                                PRICE: <input type="text" name="price" placeholder="enter a price" required  step=".01" min="0" max="10"/><br><br>
                             </label>
                             <label> 
-                                MENU LIST ORDER: <input type="number" name="listOrder" placeholder="enter sort list order" /><br><br><br>
+                                MENU LIST ORDER: <input type="number" name="listOrder" placeholder="enter sort list order" required /><br><br><br>
                             </label>
                             <input type="submit" value="Create Item" id="button-grid" />
                         </fieldset>
