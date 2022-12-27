@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<%- include("../partials/head.ejs", {title: "Employee Login" }) %> 
+    <body>
+        <div id="grid-container">
+            <%- include("../partials/header.ejs") %> 
+            <main>
+                <div id="grid-row-2 nav-menu" >
+                    <nav id="nav-menu">
+                        <a href="/employee">Home</a>
+                        <a href="/employee/signup">Signup</a>
+                    </nav>
+                </div> 
+                <div id="grid-row-3">
+                    <h4 class="hd-pg-title">Employee Login</h4>  
+                    <h2 style="color: red"><%= loginmsg %></h2>
+                </div>
+
+                <div id="grid-row-4">
+                    <form action="/employee/login" method="post">
+                        <fieldset>
+                            <label>
+                                USERNAME: <input type="text" name="username" required /><br><br>
+                            </label>
+                            <label>
+                                PASSWORD:<input type="password" name="password" required /><br><br>
+                            </label>
+                            <input type="submit" value="Login" id="button-grid" />
+                        </fieldset>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
