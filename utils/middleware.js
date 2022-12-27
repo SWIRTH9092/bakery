@@ -5,7 +5,6 @@ const express = require('express');  // bring express into our app
 require("dotenv").config();  // load ENV variables
 const morgan = require("morgan"); // logger for our request
 const methodOverride = require("method-override") // override for put and delete request from forms
-const UserRouter = require("../controllers/user");
 const session = require('express-session'); // for ENV secret
 const MongoStore = require("connect-mongo");
 const MenuUpdtRouter = require("../controllers/menuupdt"); //router for menu update 
@@ -25,7 +24,6 @@ const middleware = (app) => {
         saveUninitialized: true,
         resave: false,
     }));
-    app.use("/user", UserRouter);  // to the user router
     app.use("/menuupdt", MenuUpdtRouter);  // update menu router
     app.use("/employee", EmployeeRouter);   // employee signin
     app.use("/", EmployeeRouter);   // employee signin
