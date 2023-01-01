@@ -34,7 +34,6 @@ router.get('/', (req, res) => {
     // added sort to display menu in list order
     Menu.find().sort({listOrder: 1})
     .then((menus) => {
-        console.log(menus)
         res.render('menuupdt/index.ejs', { menus })
     })
     .catch(err => console.log(err))
@@ -48,7 +47,6 @@ router.get("/:id/edit", (req, res) => {
     //   find by id one menu item
         Menu.findById(req.params.id)
         .then ((menu) => {
-            console.log(menu)
             res.render("menuupdt/edit.ejs", { menu })
         })
         .catch(err => console.log(err))
@@ -90,7 +88,6 @@ router.post("/", (req, res) => {
 
     //   create a new item
     Menu.create(req.body, (err, createdMenu) =>{
-        // console.log('created' , createdMenu, err)
 
         // return to main list menu
         res.redirect('/menuupdt')
@@ -116,7 +113,6 @@ router.get("/:id", (req, res) => {
 //   find by id one menu item
     Menu.findById(req.params.id)
     .then ((menu) => {
-        // console.log(menu)
         res.render("menuupdt/show.ejs", { menu })
     })
     .catch(err => console.log(err))

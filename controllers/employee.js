@@ -33,7 +33,6 @@ router.post("/signup", async (req, res) => {
     req.body.password = await bcrypt.hash(req.body.password, await bcrypt.genSalt(10))
     Employee.create(req.body, (err, employee) => {
     if (!employee) {
-        console.log("not employee")
         if (err.code === 11000) {
             res.redirect("/employee/signup2")
         } else {
@@ -41,7 +40,6 @@ router.post("/signup", async (req, res) => {
         }
     } else {
         //  redirect to login page
-        console.log("display employee")
         res.redirect("/employee/login")
     }
     })

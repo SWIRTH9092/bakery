@@ -15,7 +15,7 @@ const EmployeeRouter = require("../controllers/employee"); // router for employe
 //-------------------------------------------
 const middleware = (app) => {
     app.use(express.static("public"));  // serve files from the public folder
-    app.use(morgan("tiny"));  //logging
+    //app.use(morgan("tiny"));  //logging
     app.use(methodOverride("_method"));  //override for put and delete requests from form
     app.use(express.urlencoded ({extended: true})); //pase urlencoded request
     app.use(session({
